@@ -1,0 +1,70 @@
+en
+conf ter  (use ths in access sw 4 etherchannel)
+int range f0/1-2
+switchport nonegotiate 
+channel-group 2 mode on
+
+int range f0/1-2 
+switchport mode trunk 
+switchport trunk native vlan 99
+
+int port-channel 2    (use this in the L3 sw 4 ehterchanel )
+
+trunk encapsulation dotlq
+switchport mode trunk 
+switchport trunk native vlan 99
+trunk allowed vlan 2,3,4,5,6,7,89,10,11
+switchport nonegotiate 
+
+vtp mode client 
+vtp domain ITIT.com
+vtp password admin
+
+int  range  f0/1-2
+trunk encapsulation dot1q
+switchport mode trunk 
+switchport trunk native vlan 99
+trunk allowed vlan 2,3,4,5,6,7,89,10,11
+switchport nonegotiate 
+
+int port-channel 3
+switchport mode trunk 
+switchport trunk native vlan 99
+switchport nonegotiate 
+exit
+
+vtp mode server 
+vtp domain ITIT.com
+vtp password admin@ITit
+vtp ver 2
+
+spanning-tree mode rapid-pvst 
+spanning-tree vlan 10,15,20 priority 28672
+
+vlan 4
+name IT_center
+vlan 5
+name Faculty
+vlan 6
+name ITIT Wifi
+vlan 7
+name Exam
+vlan 8
+name LABS
+vlan 9
+name Security
+vlan 10
+name Management
+vlan 11
+name APs_management 
+vlan 12
+name Guest 
+vlan 66  
+name Server_management
+vlan 13
+name switch_manaagement 
+ 
+vtp mode client
+vtp domain ITIT.com
+vtp password admin@itIT
+vtp ver 2

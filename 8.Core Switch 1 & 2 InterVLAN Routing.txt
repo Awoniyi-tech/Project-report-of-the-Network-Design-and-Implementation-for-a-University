@@ -1,0 +1,19 @@
+ip routing 
+ 
+int g0/1
+no sw
+ip add 172.16.11.70 255.255.255.240
+no shut
+exit
+
+ip route 0.0.0.0 0.0.0.0 172.16.11.100
+exit
+ 
+int g0/1
+no sw
+ip add 172.16.11.71 255.255.255.240
+no shut
+exit
+
+ip route 0.0.0.0 0.0.0.0 172.16.11.100
+exit

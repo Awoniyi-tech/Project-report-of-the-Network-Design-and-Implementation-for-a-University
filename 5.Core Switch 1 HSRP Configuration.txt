@@ -1,0 +1,109 @@
+int g0/0
+no shut
+standby 1  ip 172.16.11.65
+standby 1 priority 110
+standby preempt
+
+int vlan 4
+standby 4 ip  172.16.11.97 
+standby 4 priority 110
+standby 4 preempt 
+exi
+
+int vlan 5
+standby 5 ip 172.16.10.193 
+standby 5 prority 110
+standby 5 preempt 
+exi
+
+int vlan 6
+standby 6 ip  172.16.0.1 
+standby 6 priority 110
+standby 6 preempt
+exi
+ 
+int vlan 7
+standby 7 ip 172.16.11.33 
+standby 7 priority 110
+standby 7 preempt
+exi
+
+int vlan 8
+standby ip 172.16.8.1 
+standby 8 priority 110
+standby 8 preempt
+exi
+
+int vlan 9 
+standby ip 172.16.11.81 
+standby 9 priority 110
+standby 9 preempt
+exi
+
+int vlan 10
+standby ip 172.16.11.1 
+standby 10 priority 110
+standby 10 preempt
+exi
+
+int vlan 11
+standby 11 172.16.10.129 
+standby 11 priority 110
+standby 11 preempt
+exi
+
+int vlan 12
+standby 12  172.16.10.1  
+standby 12 priority 110
+standby 12 preempt 
+exi
+
+int vlan 13
+standby 13 172.16.11.65  
+standby 13 priority 110
+standby 13 preempt
+exi
+
+int range vlan 4-13 
+ip helper-address 172.16.11.106
+exi
+
+int vlan 4
+ip helper-address 172.16.11.106
+exi
+ 
+int vlan 5
+ip helper-address 172.16.11.106
+exi
+
+int vlan 6
+ip helper-address 172.16.11.106
+exi
+
+int vlan 7
+ip helper-address 172.16.11.106
+exi
+
+int vlan 8
+ip helper-address 172.16.11.106
+exi
+
+int vlan 9
+ip helper-address 172.16.11.106
+exi
+
+int vlan 10
+ip helper-address 172.16.11.106
+exi
+
+int vlan 11
+ip helper-address 172.16.11.106
+exi
+
+int vlan 12
+ip helper-address 172.16.11.106
+exi
+
+int vlan 13
+ip helper-address 172.16.11.106
+exi

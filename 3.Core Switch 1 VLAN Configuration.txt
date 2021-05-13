@@ -1,0 +1,109 @@
+ip routing
+vlan 99
+name NATIVE
+
+int  range  g0/1-2					
+sw tr encap dot1q				
+sw mo tr   					
+sw non
+sw tr na v 99
+exi
+
+vlan 3
+name Student_Wifi
+vlan 4
+name Labs
+vlan 5
+name Guest_Wifi
+vlan 6
+name Academic_Staff
+vlan 7
+name CCTV_surveillance
+vlan 8
+name Exams
+vlan 9
+name Finace
+vlan 10
+name AP_management 
+vlan 11
+name HR 
+vlan 12
+name Internal_servers 
+vlan 13
+name Device_management
+vlan 14
+name IT_Dept
+vlan 15
+name Marketing
+vlan 16
+name Staff
+
+int vlan 3
+ip add 172.16.0.2 255.255.248.0
+no shut 
+exi
+
+int vlan 4
+ip add 172.16.8.2 255.255.255.254
+no shut 
+exi
+
+int vlan 5
+ip add 172.16.10.2 255.255.255.128
+no shut 
+exi
+
+int vlan 6
+ip add 172.16.11.2 255.255.255.192
+no shut 
+exi
+
+int vlan 7
+ip add 172.16.11.66 255.255.254.192
+no shut 
+exi
+
+int vlan 8
+ip add 172.16.11.194 255.255.255.192
+no shut 
+exi
+
+int vlan 9
+ip add 172.16.11.256 255.255.255.240
+no shut 
+exi
+
+int vlan 10
+ip add 172.16.11.130 255.255.255.192
+no shut 
+exi
+
+int vlan 11
+ip add 172.16.12.2  255.255.255.240
+no shut 
+exi
+
+int vlan 12
+ip add 172.16.12.18  255.255.255.240
+no shut 
+exi
+
+int vlan 13
+ip add 172.16.11.242  255.255.255.240
+no shut 
+exi
+
+int vlan 14
+ip add 172.16.12.34  255.255.255.240
+no shut 
+exi
+
+int vlan 15
+ip add 172.16.12.49 255.255.255.240
+no shut 
+exi
+
+int vlan 16
+ip add 172.16.10.130  255.255.255.128
+no shut 
+exi

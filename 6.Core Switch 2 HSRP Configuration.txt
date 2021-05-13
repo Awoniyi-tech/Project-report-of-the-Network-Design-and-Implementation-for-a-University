@@ -1,0 +1,48 @@
+int g0/0
+no shut
+standby 1  ip 172.16.11.66
+exit
+
+int vlan 4
+standby 4 ip  172.16.11.97  
+exit
+
+int vlan 5
+standby 5 ip 172.16.10.193 
+exit
+
+int vlan 6
+standby 6 ip  172.16.0.1 
+exit
+ 
+int vlan 7
+standby 7 ip 172.16.11.33 
+exit
+
+int vlan 8
+standby ip 172.16.8.1 
+exit
+
+int vlan 9 
+standby ip 172.16.11.81 
+exit
+
+int vlan 10
+standby ip 172.16.11.1 
+exit
+
+int vlan 11
+standby 11 172.16.10.129 
+exit
+
+int vlan 12
+standby 12  172.16.10.1  
+exit
+
+int vlan 13
+standby 13 172.16.11.65  
+exit
+
+int range vlan 4-13 
+ip helper-address 172.16.11.106
+exit

@@ -1,0 +1,17 @@
+int service password-encryption
+enable secret cisco
+
+ip domain-name TITI.com
+crypto key generates rsa general keys
+1024
+username NETadmin secretpass@123
+line vty 0 4 
+login local 
+transport input ssh
+ip ssh ver 2
+exit
+
+int vl 1
+ip add 172.16.11.65  255.255.255.240
+no shut 
+exit

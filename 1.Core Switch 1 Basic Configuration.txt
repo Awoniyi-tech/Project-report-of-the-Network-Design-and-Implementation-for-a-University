@@ -1,0 +1,47 @@
+hostname CORE-1
+banner login #WARNING !!! This equipment is privately owned and access is logged. Disconnect immediately if you are not an authorized user. Violators will be prosecuted to the fullest extent of the law.#
+line console 0
+password class
+login 
+exit
+line aux 0
+password class
+login
+exit
+line vty 0 15
+password class
+login 
+exit
+enable secret class
+service password-encryption 
+interface vlan 13
+description Device-management
+ip address 172.16.11.242 255.255.255.240
+no shutdown
+exit
+service timestamps log datetime msec
+interface gigabitEthernet 1/0/20
+description CORE-1-to-Firewall-1
+ip address 172.16.12.66 255.255.255.252
+no shutdown
+exit
+interface gigabitEthernet 1/0/21
+description CORE-1-to-Firewall-2
+ip address 172.16.12.70 255.255.255.252
+no shutdown
+exit
+spanning-tree mode rapid-pvst
+spanning-tree vlan 3 root primary
+spanning-tree vlan 4 root primary
+spanning-tree vlan 5 root primary
+spanning-tree vlan 6 root primary
+spanning-tree vlan 7 root primary
+spanning-tree vlan 8 root primary
+spanning-tree vlan 9 root primary
+spanning-tree vlan 10 root secondary
+spanning-tree vlan 11 root secondary
+spanning-tree vlan 12 root secondary
+spanning-tree vlan 13 root secondary
+spanning-tree vlan 14 root secondary
+spanning-tree vlan 15 root secondary
+spanning-tree vlan 16 root secondary

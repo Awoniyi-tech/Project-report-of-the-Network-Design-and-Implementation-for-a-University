@@ -1,0 +1,11 @@
+int range g1/0/1-2
+sw tr encap dotlq
+sw mo tr
+sw non
+no shut
+sw tr na vl 99
+
+int range g 0/1-2
+sw mo tr
+sw tr na vl 99
+no shut
